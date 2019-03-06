@@ -22,15 +22,14 @@ export default class Settings extends Component {
                 loggedIn: true
             })
         }
+        console.error(props)
     }
     render() {
         return(
             <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
                 <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
                 <Text>{ (this.state.loggedIn) ? AsyncStorage.getItem("@username") : 'Click To Log in'}</Text>
-                <Image
-                    source={require('../../assets/img/01.jpg')} 
-                    style={{ width: 128 }}/>
+                <Text>{ this.props.navigation.getParam('wantedText') }</Text>
                 </View>
             </SafeAreaView>
         )

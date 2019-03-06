@@ -27,6 +27,8 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import { SettingsStack } from './StackNavigators/SettingsStacks'
 
+//const Wines = (props) => (<Tab name="Wines Page" searchValue={props.screenProps.searchValue} />);
+
 const styles = StyleSheet.create({
     container: {
         flex: 1, 

@@ -16,7 +16,7 @@ import { HomeDrawer } from './HomeDrawer'
 //import { SettingsDrawer } from './SettingsDrawer';
 import { SettingsStack } from './StackNavigators/SettingsStacks'
 
-export const MaterialBottomNavigator = createMaterialBottomTabNavigator({
+const MaterialBottomNavigator = createMaterialBottomTabNavigator({
     HomeDrawer: {
         screen: HomeDrawer,
         navigationOptions: ({ navigation }) => ({
@@ -55,6 +55,9 @@ export const MaterialBottomNavigator = createMaterialBottomTabNavigator({
     },*/
     Settings: {
         screen: SettingsStack,
+        params: {
+            unwantedText: 'Hello Byebye'
+        },
         navigationOptions: ({ navigation }) => ({
             title: 'Settings',
             tabBarColor: '#764ABC',
@@ -77,3 +80,15 @@ export const MaterialBottomNavigator = createMaterialBottomTabNavigator({
     activeTintColor: '#FFFFFF',
     backBehavior: true
 })
+
+export class HomeBottomNavigator extends Component {
+    static router = MaterialBottomNavigator.router;
+    constructor(props) {
+        super()
+        //console.error(props)
+    }
+    render() {
+        const { navigation } = this.props
+        return <MaterialBottomNavigator navigation = { navigation } />
+    }
+}

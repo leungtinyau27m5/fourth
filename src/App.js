@@ -12,7 +12,7 @@ import {
     createAppContainer
 } from 'react-navigation'
 
-import { MaterialBottomNavigator } from './containers/HomeNavigators/HomeBottomNavigator'
+import { HomeBottomNavigator } from './containers/HomeNavigators/HomeBottomNavigator'
 
 export default class App extends Component {
   constructor(props) {
@@ -47,9 +47,9 @@ export default class App extends Component {
         return <Text>Shop Keeper</Text>
       }
     } 
-    const AppContainer = createAppContainer(MaterialBottomNavigator)
+    const AppContainer = createAppContainer(HomeBottomNavigator)
     return (
-      <AppContainer />
+      <AppContainer username={ this.state.username }/>
     );
   }
 }

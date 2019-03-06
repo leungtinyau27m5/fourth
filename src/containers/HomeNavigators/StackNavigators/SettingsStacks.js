@@ -13,7 +13,7 @@ import {
 
 import Settings from '../../Screens/Settings'
 
-export const SettingsStack = createStackNavigator({
+const Stack = createStackNavigator({
     Settings: {
         screen: Settings,
         navigationOptions: ({ navigation }) => {
@@ -29,3 +29,14 @@ export const SettingsStack = createStackNavigator({
         gesturesEnabled: false,
     }
 })
+
+export class SettingsStack extends Component {
+    static router = Stack.router;
+    constructor(props) {
+        super()
+    }
+    render() {
+        const { navigation } = this.props
+        return <Stack navigation = { navigation } unwantedText={ navigation.getParam('unwantedText') }/>
+    }
+}
