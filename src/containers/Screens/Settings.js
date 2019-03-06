@@ -22,14 +22,16 @@ export default class Settings extends Component {
                 loggedIn: true
             })
         }
-        console.error(props)
+        //console.error(props)
     }
     render() {
+        const { navigation } = this.props
         return(
             <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
                 <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-                <Text>{ (this.state.loggedIn) ? AsyncStorage.getItem("@username") : 'Click To Log in'}</Text>
-                <Text>{ this.props.navigation.getParam('wantedText') }</Text>
+                    <Text>{ (this.state.loggedIn) ? AsyncStorage.getItem("@username") : 'Click To Log in'}</Text>
+                    <Text>{ this.props.navigation.getParam('wantedText') }</Text>
+                    <Text>{ this.props.screenProps.unwantedText }</Text>
                 </View>
             </SafeAreaView>
         )

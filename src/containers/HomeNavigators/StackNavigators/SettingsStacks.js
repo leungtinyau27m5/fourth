@@ -37,6 +37,15 @@ export class SettingsStack extends Component {
     }
     render() {
         const { navigation } = this.props
-        return <Stack navigation = { navigation } unwantedText={ navigation.getParam('unwantedText') }/>
+        //console.error(navigation.getParam('unwantedText'))
+        return (
+            <Stack 
+                navigation={ navigation } 
+                screenProps={{
+                    unwantedText: navigation.getParam('unwantedText')
+                }}
+
+            />
+        )
     }
 }
